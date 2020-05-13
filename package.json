@@ -1,0 +1,17 @@
+{
+  "name": "load",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node bin/start.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/faker": "^4.1.9",
+    "@types/k6": "^0.25.1",
+    "shelljs": "^0.8.3",
+    "typescript": "^3.7.5"
+  }
+}
