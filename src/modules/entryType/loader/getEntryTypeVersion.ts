@@ -1,22 +1,10 @@
-import { defaultOptions } from '@common/defaultOptions.js';
+import { defaultOptions, middleStages } from '@common/defaultOptions.js';
 import { callPerSecond } from '@common/utils.js';
 import { get } from '@common/requests.js';
 
-// const stages = [
-//     {
-//         duration: "1m",
-//         target: 500,
-//     },
-//     {
-//         duration: "1m",
-//         target: 10000,
-//     },
-// ];
-
 export const options = {
     ...defaultOptions,
-    // stages,
-    // rps: undefined,
+    stages: middleStages,
 };
 
 export default callPerSecond(() => {
