@@ -3,7 +3,6 @@ import { randomName } from '@common/faker'
 
 export const generateCreationParams = ({
     id = faker.random.uuid(),
-    recordId = faker.random.number(),
     snils = faker.phone.phoneNumber('###########'),
     inn = faker.phone.phoneNumber('############'),
     phone = faker.phone.phoneNumber('###########'),
@@ -15,7 +14,7 @@ export const generateCreationParams = ({
     const firstName = generateFirstName(gender);
     const lastName = faker.name.lastName(gender);
 
-    return { id, recordId, snils, inn, phone, email, birthDate, sex, firstName, lastName };
+    return { id, snils, inn, phone, email, birthDate, sex, firstName, lastName };
 };
 
 export function generateFirstName(gender?: number) {
