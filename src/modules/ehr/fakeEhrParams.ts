@@ -1,4 +1,5 @@
 import faker from '@vendors/faker/index.js';
+import { randomName } from '@common/faker'
 
 export const generateCreationParams = ({
     id = faker.random.uuid(),
@@ -18,5 +19,5 @@ export const generateCreationParams = ({
 };
 
 export function generateFirstName(gender?: number) {
-    return faker.name.firstName(gender);
+    return randomName();
 }

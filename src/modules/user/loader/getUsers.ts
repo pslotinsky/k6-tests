@@ -1,11 +1,13 @@
-import { defaultOptions } from '@common/defaultOptions.js';
+import { defaultOptions, middleStages } from '@common/defaultOptions.js';
 import { callPerSecond } from '@common/utils.js';
 import { get } from '@common/requests.js';
 
+
 export const options = {
-    ...defaultOptions
+    ...defaultOptions,
+    // stages: middleStages,
 };
 
 export default callPerSecond(() => {
-    get('/ehr/1');
+    get('/user');
 }, 0);

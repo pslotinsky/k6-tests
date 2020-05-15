@@ -2,14 +2,14 @@ import { sleep } from "k6";
 
 type Callback = () => void;
 
-export function callPerSecond(callback: Callback) {
+export function callPerSecond(callback: Callback, defaultSleepTime?: number) {
     return function() {
         const startTime = Date.now();
-    
+
         callback();
 
         const executionTime = Date.now() - startTime;
-        const sleepTime = 1 - executionTime / 1000;
+        const sleepTime = defaultSleepTime ?? 1 - executionTime / 1000;
         if (sleepTime > 0) {
             sleep(sleepTime);
         }
