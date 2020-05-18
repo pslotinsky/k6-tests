@@ -31,24 +31,24 @@ export class CreateEntryCommand {
             randomSleep();
 
             const entry = this.entry;
-            // const updateSubjectiveDataCommand = new UpdateSubjectiveDataCommand({ entry });
-            // updateSubjectiveDataCommand.execute();
+            const updateSubjectiveDataCommand = new UpdateSubjectiveDataCommand({ entry });
+            updateSubjectiveDataCommand.execute();
 
-            // const dictionaries = this.dictionaries;
-            // const updateLifeHistoryCommand = new UpdateLifeHistoryCommand({ entry, dictionaries });
-            // updateLifeHistoryCommand.execute();
+            const dictionaries = this.dictionaries;
+            const updateLifeHistoryCommand = new UpdateLifeHistoryCommand({ entry, dictionaries });
+            updateLifeHistoryCommand.execute();
 
-            // const updateMeteringCommand = new UpdateMeteringCommand({ entry });
-            // updateMeteringCommand.execute();
+            const updateMeteringCommand = new UpdateMeteringCommand({ entry });
+            updateMeteringCommand.execute();
 
-            // const updateObjectiveDataCommand = new UpdateObjectiveDataCommand({ entry });
-            // updateObjectiveDataCommand.execute();
+            const updateObjectiveDataCommand = new UpdateObjectiveDataCommand({ entry });
+            updateObjectiveDataCommand.execute();
 
             const updateMedicalCasesCommand = new UpdateMedicalCasesCommand({ entry });
             updateMedicalCasesCommand.execute();
 
-            // const updateConclusionCommand = new UpdateConclusionCommand({ entry });
-            // updateConclusionCommand.execute();
+            const updateConclusionCommand = new UpdateConclusionCommand({ entry });
+            updateConclusionCommand.execute();
 
             const { medicalCaseIds } = updateMedicalCasesCommand;
             const updateReferralsCommand = new UpdateReferralsCommand({ entry, medicalCaseIds });
@@ -76,17 +76,17 @@ export class CreateEntryCommand {
         this.getPlans();
         this.getEntryTypes();
         this.getVersions();
-    }   
-    
+    }
+
     private getEntryTypes(): void {
         get('/entry-type');
     }
-    
+
     private getEhr(id: string): EhrData {
         const { ehr } = get(`/ehr/${id}`);
         return ehr;
     }
-    
+
     private createEntry(): EntryData {
         const id = randomUuid();
         post('/entry', {

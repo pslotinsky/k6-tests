@@ -1,5 +1,5 @@
 import faker from '@vendors/faker/index.js';
-import { randomName } from '@common/faker'
+import { randomName } from '@common/faker.js'
 
 export const generateCreationParams = ({
     id = faker.random.uuid(),

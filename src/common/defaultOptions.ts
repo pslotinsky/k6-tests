@@ -60,12 +60,47 @@ export const slowStages = [
     },
 ];
 
+// Current rps  < 50
+export const slowlyStages = [
+    {
+        duration: '1s',
+        target: 1,
+    },
+    {
+        duration: '10s',
+        target: 2,
+    },
+    {
+        duration: '10s',
+        target: 10,
+    },
+    {
+        duration: '10s',
+        target: 30,
+    },
+    {
+        duration: '1m',
+        target: 50,
+    },
+];
 
 export const thresholds = {
     'http_req_waiting': [{
         threshold: 'p(95)<1500',
         abortOnFail: true,
         delayAbortEval: '10s'
+    }],
+    'failed requests': [{
+        threshold: 'rate<0.1',
+        abortOnFail: true,
+    }],
+};
+
+export const slowThresholds = {
+    'http_req_waiting': [{
+        threshold: 'p(95)<1500',
+        abortOnFail: true,
+        delayAbortEval: '5s'
     }],
     'failed requests': [{
         threshold: 'rate<0.1',

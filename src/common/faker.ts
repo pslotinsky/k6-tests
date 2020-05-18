@@ -23,12 +23,12 @@ export function randomSurname(gender: boolean = randomGender()): string {
 
 export function randomMaleName(): string {
     const index = randomNumber(maleNames.length);
-    return maleSurnames[index];
+    return maleNames[index];
 }
 
 export function randomFemaleName(): string {
     const index = randomNumber(femaleNames.length);
-    return femaleSurnames[index];
+    return femaleNames[index];
 }
 
 export function randomMaleSurname(): string {

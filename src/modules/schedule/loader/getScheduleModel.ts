@@ -1,12 +1,11 @@
-import { defaultOptions, slowlyStages, thresholds } from '@common/defaultOptions.js';
+import { defaultOptions } from '@common/defaultOptions.js';
 import { callPerSecond } from '@common/utils.js';
 import { get } from '@common/requests.js';
 
 export const options = {
-    ...defaultOptions,
-    stages: slowlyStages,
-};
+    ...defaultOptions
+}
 
 export default callPerSecond(() => {
-    get('/entry/80');
+    get('/schedule-model/ada42c4a-e24d-4fdf-b89b-1eb4fdbbca4e');
 }, 0);

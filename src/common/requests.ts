@@ -5,9 +5,15 @@ import { baseUrl } from './config.js';
 
 export const failedRequests = new Rate('failed requests');
 
+const user = {
+    id: 'd3ab5319-eee3-43fd-a488-9808164b2abd',
+    organizationId: 'a3fc0ddd-05f3-48bd-a052-26d2a60ac7b9',
+}
+
 const headers = {
     'Connection': 'keep-alive',
     'Content-Type': 'application/json;charset=UTF-8',
+    'user': encodeURI(JSON.stringify(user)),
 };
 
 export function get(url: string, params: any = {}) {

@@ -4,7 +4,8 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "start": "node bin/start.js"
+    "start": "node bin/start.js",
+    "start-group": "node bin/startGroup.js"
   },
   "author": "",
   "license": "ISC",

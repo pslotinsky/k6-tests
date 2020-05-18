@@ -5,8 +5,8 @@ import { get } from '@common/requests.js';
 export const options = {
     ...defaultOptions,
     stages: slowStages,
-};
+}
 
 export default callPerSecond(() => {
-    get('/entry-type/508d0678-23c3-4ec5-a02b-6bf5326a4746');
+    get('/schedule-model/ada42c4a-e24d-4fdf-b89b-1eb4fdbbca4e/worktime');
 }, 0);

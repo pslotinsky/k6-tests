@@ -5,8 +5,13 @@ import { get } from '@common/requests.js';
 export const options = {
     ...defaultOptions,
     stages: slowStages,
-};
+}
 
 export default callPerSecond(() => {
-    get('/entry-type/508d0678-23c3-4ec5-a02b-6bf5326a4746');
+    get('/schedule', {
+        limit: 100,
+        offset: 0,
+        from: '2020-05-01T18:36:07.850Z',
+        to: '2020-05-30T18:36:07.850Z',
+    });
 }, 0);
