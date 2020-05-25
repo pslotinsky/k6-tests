@@ -16,6 +16,9 @@
 * `yarn start ehr/loader/getEhrFieldHistory`  
 * `yarn start ehr/loader/getEhrPlan`  
 * `yarn start ehr/loader/getReferralList`  
+* `yarn start ehr/loader/getEhrBankCards`  
+* `yarn start ehr/loader/findEhrSponsor`  
+* `yarn start ehr/loader/getEhrSubscriptions`  
 #
 ####Entry
 * `yarn start-group entry`
@@ -25,6 +28,7 @@
 * `yarn start entry/loader/getEntryById`  
 * `yarn start entry/loader/getEntryVersion`
 * `yarn start entry/loader/getEntryList`  
+* `yarn start entry/loader/getRenderedServiceList`  
 #
 ####EntryType
 * `yarn start-group entryType`
@@ -88,4 +92,23 @@
 * `yarn start organization/loader/getOfficeList`
 * `yarn start organization/loader/getOfficeTypeList`
 * `yarn start organization/loader/getOrganizationList`
+#
+####Plan
+* `yarn start-group plan`
+#####Получение
+* `yarn start plan/loader/getList`
+* `yarn start plan/loader/getById`
+* `yarn start plan/loader/getPlanVersions`
+* `yarn start plan/loader/getPlanVersionByIds`
+#
+####Billing
+* `yarn start-group billing`
+#####Получение
+* `yarn start billing/loader/getAllRenderedServiceList`
+* `yarn start billing/loader/getBalance`
+#
+####Service-group
+* `yarn start-group service-group`
+#####Получение
+* `yarn start service-group/loader/getList`
 #

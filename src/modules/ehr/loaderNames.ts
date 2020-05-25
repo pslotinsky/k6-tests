@@ -5,4 +5,7 @@ export const loaderNames = [
     'getEhrFieldHistory',
     'getEhrPlan',
     'getReferralList',
+    'getEhrBankCards',
+    'findEhrSponsor',
+    'getEhrSubscriptions',
 ];
