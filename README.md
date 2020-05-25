@@ -1,6 +1,10 @@
 Тесты:
 ===
 
+
+####Запустить все
+* `yarn start-group ehr,entry,user,entryType,dictionary,service,service-catalog,schedule,price,organization`
+
 ####Ehr
 * `yarn start-group ehr`
 #####Создание/редактирование
@@ -31,6 +35,7 @@
 * `yarn start entryType/loader/getEntryTypeBlockList`
 
 ####User
+* `yarn start-group user`
 #####Получение
 * `yarn start user/loader/getUsers`
 #

@@ -1,6 +1,5 @@
 var shell = require('shelljs');
 const path = require('path');
-const { loaderNames } = require(`../dist/modules/${process.argv[2]}/loaderNames`);
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -21,16 +20,21 @@ Object.keys(compilerOptions.paths).forEach(key => {
     shell.exec(`find dist -type f -exec sed -i 's/${name}/${absolutePath}/g' {} +`);
 });
 
-const moduleDirName = process.argv[2];
-
-shell.exec(`mkdir -p results`);
-shell.exec(`mkdir -p results/${moduleDirName}`);
-
 (async () => {
-    for (let loaderName of loaderNames) {
-        shell.exec(`k6 run --summary-export=results/${moduleDirName}/${loaderName}.json \
+    const moduleDirNames = process.argv[2].split(',');
+
+    shell.exec(`mkdir -p results`);
+
+    for (let moduleDirName of moduleDirNames) {
+
+        const { loaderNames } = require(`../dist/modules/${moduleDirName}/loaderNames`);
+        shell.exec(`mkdir -p results/${moduleDirName}`);
+
+        for (let loaderName of loaderNames) {
+            shell.exec(`k6 run --summary-export=results/${moduleDirName}/${loaderName}.json \
          --compatibility-mode=base -e LOADER=${moduleDirName}/loader/${loaderName} ./dist/index.js`);
-        await sleep(15000);
+            await sleep(15000);
+        }
     }
 })();
 
