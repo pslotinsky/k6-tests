@@ -1,10 +1,10 @@
-import { defaultOptions, slowlyStages, thresholds } from '@common/defaultOptions.js';
+import { defaultOptions, middleStages, thresholds } from '@common/defaultOptions.js';
 import { callPerSecond } from '@common/utils.js';
 import { get } from '@common/requests.js';
 
 export const options = {
     ...defaultOptions,
-    stages: slowlyStages,
+    stages: middleStages,
 };
 
 export default callPerSecond(() => {

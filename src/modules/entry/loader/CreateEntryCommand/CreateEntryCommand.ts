@@ -6,6 +6,7 @@ import { Command } from '@common/Command.js';
 import { randomName, randomUuid } from '@common/faker.js';
 import { get, post } from '@common/requests.js';
 import { sample, randomSleep } from '@common/utils.js';
+import { ENTRY_TYPE_ID, ORGANIZATION_ID } from '@common/constants.js';
 
 import { UpdateSubjectiveDataCommand } from './UpdateSubjectiveDataCommand.js';
 import { UpdateLifeHistoryCommand } from './UpdateLifeHistoryCommand.js';
@@ -91,8 +92,8 @@ export class CreateEntryCommand {
         const id = randomUuid();
         post('/entry', {
             entry: {
-                organizationId: 'a3fc0ddd-05f3-48bd-a052-26d2a60ac7b9',
-                typeId: '508d0678-23c3-4ec5-a02b-6bf5326a4746',
+                organizationId: ORGANIZATION_ID,
+                typeId: ENTRY_TYPE_ID,
                 ehrId: this.ehr.id,
                 id,
             }

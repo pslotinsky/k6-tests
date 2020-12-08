@@ -8,151 +8,23 @@ export const options: Partial<Options> = {
     ...defaultOptions,
     stages: [
         {
-            duration: "1m",
-            target: 50,
+            duration: "30s",
+            target: 10,
         },
         {
             duration: "1m",
             target: 100,
         },
         {
-            duration: "500m",
+            duration: "3m",
             target: 100,
         },
-        // {
-        //     duration: "20s",
-        //     target: 100,
-        // },
-        // {
-        //     duration: "2m30s",
-        //     target: 10,
-        // },
-        // {
-        //     duration: "20s",
-        //     target: 50,
-        // },
-        // {
-        //     duration: "1m",
-        //     target: 100,
-        // },
-        // {
-        //     duration: "10m",
-        //     target: 600,
-        // },
-        // {
-        //     duration: "2m30s",
-        //     target: 10,
-        // },
-        // {
-        //     duration: "20s",
-        //     target: 50,
-        // },
-        // {
-        //     duration: "1m",
-        //     target: 100,
-        // },
-        // {
-        //     duration: "10m",
-        //     target: 600,
-        // },
-        // {
-        //     duration: "2m30s",
-        //     target: 10,
-        // },
-        // {
-        //     duration: "20s",
-        //     target: 50,
-        // },
-        // {
-        //     duration: "1m",
-        //     target: 100,
-        // },
-        // {
-        //     duration: "10m",
-        //     target: 600,
-        // },
-        // {
-        //     duration: "2m30s",
-        //     target: 10,
-        // },
-        // {
-        //     duration: "20s",
-        //     target: 50,
-        // },
-        // {
-        //     duration: "1m",
-        //     target: 100,
-        // },
-        // {
-        //     duration: "10m",
-        //     target: 600,
-        // },
-        // {
-        //     duration: "2m30s",
-        //     target: 10,
-        // },
-        // {
-        //     duration: "20s",
-        //     target: 50,
-        // },
-        // {
-        //     duration: "1m",
-        //     target: 100,
-        // },
-        // {
-        //     duration: "10m",
-        //     target: 600,
-        // },
-        // {
-        //     duration: "2m30s",
-        //     target: 10,
-        // },
-        // {
-        //     duration: "20s",
-        //     target: 50,
-        // },
-        // {
-        //     duration: "1m",
-        //     target: 100,
-        // },
-        // {
-        //     duration: "10m",
-        //     target: 600,
-        // },
-        // {
-        //     duration: "2m30s",
-        //     target: 10,
-        // },
-        // {
-        //     duration: "20s",
-        //     target: 50,
-        // },
-        // {
-        //     duration: "1m",
-        //     target: 100,
-        // },
-        // {
-        //     duration: "10m",
-        //     target: 600,
-        // },
-        // {
-        //     duration: "2m30s",
-        //     target: 10,
-        // },
-        // {
-        //     duration: "20s",
-        //     target: 50,
-        // },
-        // {
-        //     duration: "1m",
-        //     target: 100,
-        // },
-        // {
-        //     duration: "10m",
-        //     target: 600,
-        // },
+        {
+            duration: "1m",
+            target: 0,
+        },
     ],
-    rps: 50,
+    rps: 80,
     thresholds: {
         "http_req_waiting": [{
             threshold: "p(95)<30000",

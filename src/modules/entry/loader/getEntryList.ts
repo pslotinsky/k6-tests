@@ -1,6 +1,7 @@
 import { defaultOptions, slowlyStages, thresholds } from '@common/defaultOptions.js';
 import { callPerSecond } from '@common/utils.js';
 import { get } from '@common/requests.js';
+import { ENTRY_ID } from '@common/constants.js';
 
 export const options = {
     ...defaultOptions,
@@ -9,6 +10,6 @@ export const options = {
 
 export default callPerSecond(() => {
     get('/entry', {
-        ehrIds: '5af0a60a-09c1-4e26-88c8-3bc6d29b6532',
+        ehrIds: ENTRY_ID,
     });
 }, 0);

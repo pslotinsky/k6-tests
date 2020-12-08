@@ -1,6 +1,7 @@
 import { defaultOptions } from '@common/defaultOptions.js';
 import { callPerSecond } from '@common/utils.js';
 import { get } from '@common/requests.js';
+import { SCHEDULE_MODEL_ID } from '@common/constants.js';
 
 export const options = {
     ...defaultOptions
@@ -8,6 +9,6 @@ export const options = {
 
 export default callPerSecond(() => {
     get('/customized-service', {
-        scheduleModelIds: '7ea07eb7-01c7-434d-8fba-cc2fb46ad029',
+        scheduleModelIds: SCHEDULE_MODEL_ID,
     });
 }, 0);

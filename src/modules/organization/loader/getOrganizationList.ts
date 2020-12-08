@@ -1,11 +1,14 @@
-import { defaultOptions } from '@common/defaultOptions.js';
+import { defaultOptions, slowlyStages } from '@common/defaultOptions.js';
 import { callPerSecond } from '@common/utils.js';
 import { get } from '@common/requests.js';
 
 export const options = {
-    ...defaultOptions
+    ...defaultOptions,
+    // stages: slowlyStages,
 }
 
 export default callPerSecond(() => {
-    get('/organization');
+    get('/organization', {
+        limit: 100,
+    });
 }, 0);

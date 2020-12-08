@@ -1,6 +1,7 @@
 import { defaultOptions, middleStages } from '@common/defaultOptions.js';
 import { callPerSecond } from '@common/utils.js';
 import { get } from '@common/requests.js';
+import { DICTIONARY_ITEM_ID } from '@common/constants.js';
 
 export const options = {
     ...defaultOptions,
@@ -8,5 +9,5 @@ export const options = {
 };
 
 export default callPerSecond(() => {
-    get('/dictionary-item', { ids: '658ce6fd-1501-4bc0-95c3-88afedc2ddbd' });
+    get('/dictionary-item', { ids: DICTIONARY_ITEM_ID });
 }, 0);

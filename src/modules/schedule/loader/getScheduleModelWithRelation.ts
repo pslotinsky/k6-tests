@@ -8,7 +8,7 @@ export const options = {
 }
 
 export default callPerSecond(() => {
-    get('/schedule-model/user', {
+    get('/schedule-model/subject', {
         name: randomName(),
     });
 }, 0);

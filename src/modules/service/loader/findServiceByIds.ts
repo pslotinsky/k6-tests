@@ -1,6 +1,7 @@
 import { defaultOptions } from '@common/defaultOptions.js';
 import { callPerSecond } from '@common/utils.js';
 import { get } from '@common/requests.js';
+import { SERVICE_ID } from '@common/constants.js';
 
 export const options = {
     ...defaultOptions,
@@ -8,5 +9,5 @@ export const options = {
 };
 
 export default callPerSecond(() => {
-    get('/service', { ids: 'fe26bb1a-ffe0-405d-a9f2-1a4b49bae195' });
+    get('/service', { ids: SERVICE_ID });
 }, 0);

@@ -1,14 +1,14 @@
-import { defaultOptions, slowlyStages } from '@common/defaultOptions.js';
+import { defaultOptions, slowlyStages, slowThresholds } from '@common/defaultOptions.js';
 import { callPerSecond } from '@common/utils.js';
 import { get } from '@common/requests.js';
+import { EHR_ID } from '@common/constants.js';
 
 export const options = {
     ...defaultOptions,
     stages: slowlyStages,
+    thresholds: slowThresholds,
 };
 
 export default callPerSecond(() => {
-    get('/ehr/6975c4b0-4ce2-42e4-a137-13b0329f3063/field/history', {
-        name: 'medicalCases',
-    });
+    get(`/ehr/${EHR_ID}/field/history`);
 }, 0);

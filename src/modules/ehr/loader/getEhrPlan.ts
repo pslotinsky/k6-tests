@@ -1,6 +1,7 @@
 import { defaultOptions, middleStages } from '@common/defaultOptions.js';
 import { callPerSecond } from '@common/utils.js';
 import { get } from '@common/requests.js';
+import { EHR_ID, SERVICE_ID } from '@common/constants.js';
 
 export const options = {
     ...defaultOptions,
@@ -8,8 +9,8 @@ export const options = {
 };
 
 export default callPerSecond(() => {
-    get('/ehr/6975c4b0-4ce2-42e4-a137-13b0329f3063/plan', {
-        serviceIds: 'fe26bb1a-ffe0-405d-a9f2-1a4b49bae195',
+    get(`/ehr/${EHR_ID}/plan`, {
+        serviceIds: SERVICE_ID,
         actualOn: '2020-05-01'
     });
 }, 0);

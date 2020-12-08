@@ -5,6 +5,8 @@
 ####Запустить все
 * `yarn start-group ehr,entry,user,entryType,dictionary,service,service-catalog,schedule,price,organization`
 
+* `yarn start-group billing,ehr,entry,entryType,dictionary,organization`
+
 ####Ehr
 * `yarn start-group ehr`
 #####Создание/редактирование
