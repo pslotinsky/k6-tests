@@ -5,10 +5,11 @@ import { EHR_ID } from '@common/constants.js';
 
 export const options = {
     ...defaultOptions,
-    // stages: slowlyStages,
+    stages: slowlyStages,
     // threshold: slowThresholds,
 };
 
 export default callPerSecond(() => {
     get(`/ehr/${EHR_ID}/referral`);
+    // get(`/ehr/${EHR_ID}/referral`);
 }, 0);

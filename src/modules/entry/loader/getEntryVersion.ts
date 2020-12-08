@@ -5,7 +5,7 @@ import { get } from '@common/requests.js';
 export const options = {
     ...defaultOptions,
     stages: slowStages,
-    // thresholds: slowThresholds,
+    thresholds: slowThresholds,
 };
 
 export default callPerSecond(() => {

@@ -70,6 +70,9 @@
 * `yarn start schedule/loader/findCustomizedServices`
 * `yarn start schedule/loader/getEntryReservation`
 * `yarn start schedule/loader/getSchedule`
+* `yarn start schedule/loader/getScheduleOnDate`
+* `yarn start schedule/loader/getScheduleSlots`
+* `yarn start schedule/loader/getScheduleScheduleModelOnDate`
 * `yarn start schedule/loader/getScheduleModelList`
 * `yarn start schedule/loader/getScheduleModel`
 * `yarn start schedule/loader/getScheduleModelWithRelation`
@@ -84,6 +87,7 @@
 * `yarn start price/loader/getListOfPriceList`
 * `yarn start price/loader/getPriceList`
 * `yarn start price/loader/getPrices`
+* `yarn start price/loader/getActualOnPrice`
 #
 ####Organization
 * `yarn start-group organization`
@@ -108,6 +112,7 @@
 #####Получение
 * `yarn start billing/loader/getAllRenderedServiceList`
 * `yarn start billing/loader/getBalance`
+* `yarn start billing/loader/getCost`
 #
 ####Service-group
 * `yarn start-group service-group`
