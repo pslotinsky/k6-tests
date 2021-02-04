@@ -25,12 +25,15 @@
 ####Entry
 * `yarn start-group entry`
 #####Создание/редактирование
-* `yarn start entry/loader/createEntry`
+* `yarn start entry/loader/createEntry`  
+* `yarn start entry/loader/createMedicalCase`  
+* `yarn start entry/loader/createReferral`  
+* `yarn start entry/loader/createRenderedService`  
 #####Получение  
 * `yarn start entry/loader/getEntryById`  
-* `yarn start entry/loader/getEntryVersion`
+* `yarn start entry/loader/getEntryVersion`  
 * `yarn start entry/loader/getEntryList`  
-* `yarn start entry/loader/getRenderedServiceList`  
+* `yarn start entry/loader/getRenderedServiceList`   
 #
 ####EntryType
 * `yarn start-group entryType`

@@ -1,8 +1,9 @@
-export const EHR_ID = '55dd112d-cf7c-461e-8a85-5301ecb6ec4a';
-export const DICTIONARY_ITEM_ID = '2157b274-ba1e-4581-928a-c4377d52c991';
-export const SERVICE_ID = '067f2f8f-968d-4d6c-8f0c-0709aaa027a8';
-export const ENTRY_ID = '672a583b-e0f9-4991-bc5e-98e8d522233c';
-export const ENTRY_TYPE_ID = 'd037e62d-d5d1-4bdc-9833-d16442d50696';
-export const SCHEDULE_MODEL_ID = '70e292da-0f5d-4efb-a75f-990e3cba4db0';
-export const ORGANIZATION_ID ='917110f2-402d-4bdd-b52f-591d0204b3da';
+export const EHR_ID = 'ae77045c-37e3-438a-83de-8e15f6e6f755';
+export const DICTIONARY_ITEM_ID = '536426d9-9ddc-4622-b15f-6ed416d97126';
+export const SERVICE_ID = 'd3baeaa1-64dc-4324-a6fc-3334a53dc3de';
+export const ENTRY_ID = 'bb0a8ca1-582c-4ed5-950b-20a29f058056';
+export const ENTRY_TYPE_ID = 'c3a703d8-4081-451c-90e1-dcd1f9693c6b';
+export const SCHEDULE_MODEL_ID = 'ee7d65ce-ac9f-4fe5-9d85-dce1c1d286c8';
+export const ORGANIZATION_ID ='c9af93ca-e6b6-4a77-a2d0-e70e2971da56';
 export const USER_ID = '246d7fba-0de2-4a9f-9c8f-b6e35e0681a1';
+export const FROM_DATE = new Date(2021, 1, 3);

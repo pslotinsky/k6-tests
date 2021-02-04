@@ -1,40 +1,34 @@
 import { Options } from 'k6/options';
 
-import { defaultOptions } from '@common/defaultOptions.js';
+import { callPerSecond } from '@common/utils.js';
+import { defaultOptions, slowlyStages, slowThresholds } from '@common/defaultOptions.js';
+import { ENTRY_TYPE_ID, ORGANIZATION_ID } from '@common/constants.js';
 
-import { CreateEntryCommand } from './CreateEntryCommand/CreateEntryCommand.js';
+import { get, post } from '@common/requests.js';
+import { randomNumber, randomUuid } from '@common/faker';
 
 export const options: Partial<Options> = {
     ...defaultOptions,
-    stages: [
-        {
-            duration: "30s",
-            target: 10,
-        },
-        {
-            duration: "1m",
-            target: 100,
-        },
-        {
-            duration: "3m",
-            target: 100,
-        },
-        {
-            duration: "1m",
-            target: 0,
-        },
-    ],
-    rps: 80,
-    thresholds: {
-        "http_req_waiting": [{
-            threshold: "p(95)<30000",
-            abortOnFail: true,
-            delayAbortEval: "10s"
-        }],
-    },
+    stages: slowlyStages,
+    thresholds: slowThresholds,
 };
 
-export default () => {
-    const command = new CreateEntryCommand();
-    command.execute();
-};
+export default callPerSecond(() => {
+
+    const { ehrs } = get('/ehr', {
+        limit: 1,
+        offset: randomNumber(0, 5000)
+    });
+
+    const ehr = ehrs[0];
+
+    const id = randomUuid();
+    post('/entry', {
+        entry: {
+            id,
+            organizationId: ORGANIZATION_ID,
+            typeId: ENTRY_TYPE_ID,
+            ehrId: ehr.id,
+        }
+    })
+}, 0);
