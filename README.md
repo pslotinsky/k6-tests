@@ -69,6 +69,8 @@
 #
 ####Schedule
 * `yarn start-group schedule`
+#####Создание/редактирование  
+* `yarn start schedule/loader/createReservation`  
 #####Получение
 * `yarn start schedule/loader/findCustomizedServices`
 * `yarn start schedule/loader/getEntryReservation`
