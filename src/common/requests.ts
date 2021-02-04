@@ -7,9 +7,9 @@ import { USER_ID, ORGANIZATION_ID } from '@common/constants.js';
 export const failedRequests = new Rate('failed requests');
 
 const user = {
-    id: '246d7fba-0de2-4a9f-9c8f-b6e35e0681a1',
+    id: USER_ID,
     email: 'admin@chaika.club',
-    organizationId: '917110f2-402d-4bdd-b52f-591d0204b3da',
+    organizationId: ORGANIZATION_ID,
 }
 
 const headers = {
